@@ -24,5 +24,8 @@ jobs:
       with:
         node-version: '16'
 
+    - name: Conceder permissões de execução ao Maven Wrapper
+      run: chmod +x forum-api-main/mvnw
+
     - name: Executar os testes
       run: ./mvnw -f forum-api-main/pom.xml test
