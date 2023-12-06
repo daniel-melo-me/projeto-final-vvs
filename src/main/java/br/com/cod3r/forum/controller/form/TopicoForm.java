@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class TopicoForm {
 
     @NotNull
-    @NotEmpty
+    @NotEmpty //
     @Length(min = 5)
     private String titulo;
     @NotNull
