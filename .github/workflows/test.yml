@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
-        java-version: '8'
+        java-version: '8'  # Altere para '8' para usar o Java 8
 
     - name: Use Node.js 16
       uses: actions/setup-node@v3
@@ -25,7 +25,7 @@ jobs:
         node-version: '16'
 
     - name: Conceder permissões de execução ao Maven Wrapper
-      run: chmod +x forum-api-main/mvnw
+      run: chmod +x mvnw
 
     - name: Executar os testes
-      run: ./forum-api-main/mvnw -f forum-api-main/pom.xml test
+      run: ./mvnw -f forum-api-main/pom.xml test
