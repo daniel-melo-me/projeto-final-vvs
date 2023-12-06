@@ -1,0 +1,23 @@
+name: Testes Unitários
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Configurar o Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Executar os testes
+      run: ./mvnw -f forum-api-main/pom.xml test
