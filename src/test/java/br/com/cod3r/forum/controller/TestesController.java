@@ -38,7 +38,7 @@ public class TestesController {
                 .andExpect(MockMvcResultMatchers.content().string("Hello"));
     }
 
-    @Test
+    @Test 
     public void testHelloEndpointWithoutAuthentication() throws Exception {
         mockMvc
                 .perform(MockMvcRequestBuilders.get("/hello"))
