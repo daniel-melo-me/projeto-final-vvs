@@ -20,7 +20,4 @@ jobs:
         java-version: '11'
 
     - name: Executar os testes
-      run: |
-        chmod +x forum-api-main/mvnw
-        ./forum-api-main/mvnw -f forum-api-main/pom.xml test
-      
+      run: ./mvnw test
