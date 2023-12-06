@@ -13,11 +13,16 @@ jobs:
     - name: Checkout do código
       uses: actions/checkout@v2
 
-    - name: Configurar o Java
-      uses: actions/setup-java@latest
+    - name: Configurar o Java e Node.js
+      uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
         java-version: '11'
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
 
     - name: Executar os testes
       run: ./mvnw -f forum-api-main/pom.xml test
