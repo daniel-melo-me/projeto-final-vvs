@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - dev
-  pull_request:
-    branches:
-      - dev
 
 jobs:
   test:
@@ -20,7 +17,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: 'adopt'
-        java-version: '8'  # Altere para '8' para usar o Java 8
+        java-version: '8'
 
     - name: Use Node.js 16
       uses: actions/setup-node@v3
@@ -31,4 +28,4 @@ jobs:
       run: chmod +x mvnw
 
     - name: Executar os testes
-      run: ./mvnw -f forum-api-main/pom.xml test
+      run: ./mvnw -f pom.xml test
