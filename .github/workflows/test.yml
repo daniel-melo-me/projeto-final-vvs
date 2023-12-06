@@ -3,7 +3,7 @@ name: Testes Unitários
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   test:
@@ -14,10 +14,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configurar o Java
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@latest
       with:
         distribution: 'adopt'
         java-version: '11'
 
     - name: Executar os testes
-      run: ./mvnw test
+      run: ./mvnw -f forum-api-main/pom.xml test
